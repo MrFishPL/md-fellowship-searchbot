@@ -1,0 +1,11 @@
+venv/
+.venv/
+user_cache.db
+history/
+.env
+*.pyc
+*.pyo
+data/
+*.db
+.DS_Store
+.cursorignore
