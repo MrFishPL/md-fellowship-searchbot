@@ -5,7 +5,7 @@ A Slack bot that provides channel message syncing and broadcasting capabilities.
 ## Features
 
 - **Message Sync**: Sync messages from all public channels to a JSON file
-- **Broadcasting**: Send messages to all users in the workspace
+- **Semantic search**: Search for messages in your slack workspace
 - **Admin Controls**: Restrict command access to administrators only
 
 ## Setup
@@ -17,6 +17,7 @@ Create a `.env` file with your Slack tokens:
 ```
 SLACK_BOT_TOKEN=xoxb-your-bot-token
 SLACK_APP_TOKEN=xapp-your-app-token
+OPENAI_API_KEY=your-openai-api-key-goes-here
 ```
 
 ### 2. Install Dependencies
@@ -36,13 +37,13 @@ For the sync command:
 - Command: `/sync`
 - Request URL: Your server URL that handles commands (or use Socket Mode)
 - Short Description: "Sync messages from all public channels"
-- Usage Hint: Just type /sync
+- Usage Hint: Just type /sync. Admin only
 
 For the broadcast command:
-- Command: `/broadcast`
+- Command: `/start-search`
 - Request URL: Your server URL that handles commands (or use Socket Mode)
-- Short Description: "Send a message to all users in the workspace"
-- Usage Hint: "[message]"
+- Short Description: "Starts the conversation"
+- Usage Hint: Just type /start-search
 
 5. Save changes
 
@@ -66,7 +67,7 @@ python app.py
 ## Usage
 
 - `/sync` - Sync all public channel messages to a JSON file (admin only, DM only)
-- `/broadcast [message]` - Send a message to all users in the workspace (admin only, DM only)
+- `/start-search` - Starts a conversation with a bot
 
 ## Configuration
 
